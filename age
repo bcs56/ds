@@ -1,0 +1,11 @@
+import pandas as pd
+age_records = pd.DataFrame({
+'Person_ID': [1, 2, 3, 4, 5, 6],
+'Age': [18, 25, 32, 45, 52, 65]
+})
+age_records['Age_Bin'] = pd.cut(
+age_records['Age'], bins=3,
+labels=['Young', 'Middle', 'Old']
+)
+print("Original and Discretized Data:")
+print(age_records)
